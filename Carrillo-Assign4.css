@@ -8,12 +8,14 @@
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     --listSpacing: 4rem;
+    --default-text-color: rgb(195, 195, 195);
 }
 
 body {
     background-image: linear-gradient(rgb(172, 0, 106), rgb(0, 162, 255));
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: var(--default-text-color);
 }
 
 header {
@@ -23,13 +25,13 @@ header {
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 .links {
     position: absolute;
     top: 50px;
     right: var(--listSpacing);
-    ;
 }
 
 .links a {
@@ -51,6 +53,11 @@ header {
     top: 2px;
 }
 
+.block {
+    display: block;
+    margin-bottom: 2rem;
+}
+
 .links li {
     float: left;
     text-align: right;
@@ -59,38 +66,45 @@ header {
 
 .text-logo {
     position: absolute;
-    top: 30px;
-    left: 19rem;
-    color: rgb(211, 211, 211);
-    font-size: .8rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 17rem;
+    font-size: 1.3rem;
     letter-spacing: .5rem;
     line-height: 1.3rem;
-}
+ }
 
 .logo {
     position: absolute;
-    top: 30px;
-    left: 3rem;
+    left: 1.7rem;
+    width: 9vw;
+    transform: translate(0, -50%);
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
-.logo img {
-    width: 12vw;
+#synthLogo {
+    margin-bottom: 50px;
 }
 
 main {
     max-width: 90rem;
     margin: auto;
     background-color: rgba(0, 0, 0, .2);
-    padding: 1rem 5rem 0 5rem;
+    padding: 0 4.5rem 0 4.5rem;
     text-align: justify;
 }
 
-.container p{
+p {
     font-family: 'Raleway', sans-serif;
-    font-size: 1.3rem;
     line-height: 1.7rem;
     letter-spacing: .1rem;
-    color: rgb(195, 195, 195);
+    font-size: 1.2rem;
+}
+
+section {
+    position: relative;
+    overflow: auto;
 }
 
 .styleLogo {
@@ -98,39 +112,32 @@ main {
     margin-top: 4rem;
 }
 
+.left-element {
+    float: left;
+    margin-right: 1.5rem;
+}
+
+.right-element {
+    float:right;
+    margin-left: 1.5rem;
+}
+
 .grid1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.3rem;
+    grid-template-columns:repeat(3, 1fr);
+    gap: .5rem;
 }
 
-.synthWaveGrid2 {
+.grid2 {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1.3rem;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
-.grid3 {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.grid3 img {
+.grid1 img {
     width: 425px;
     height: 400px;
     object-fit: cover;
-}
-
-.freeStandingText {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.content, .drivePic {
-    margin-top: .5rem;
 }
 
 iframe {
@@ -143,8 +150,12 @@ iframe {
 
 hr {
     border: 1px solid rgba(0, 0, 0, .3);
-    margin-top: 4rem;
-    margin-bottom: 10rem;
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+}
+
+#last-hr {
+    margin-bottom: 8rem;
 }
 
 .vapeHead {
@@ -167,18 +178,16 @@ footer {
     width: 100%;
     height: 80px;
     color: silver;
-    font-size: .8rem;
     letter-spacing: .5rem;
     background-color: rgba(41, 41, 41, 0.5);
     backdrop-filter: blur(10px);
-    text-align: center;
 }
 
 footer p {
+    font-family: 'Montserrat', sans-serif;
     position: absolute;
     top: 50%;
-    left: 42%;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .7rem;
 }
-
-
