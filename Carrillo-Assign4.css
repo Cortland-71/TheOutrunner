@@ -4,24 +4,35 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    list-style: none;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    --listSpacing: 4rem;
+    --list-spacing: 4rem;
     --default-text-color: rgb(195, 195, 195);
+    --table-border-color: rgba(221, 221, 221, 0.212);
+    --background-color: linear-gradient(rgb(172, 0, 106), rgb(0, 162, 255));
+    --header-background-color: rgba(41, 41, 41, 0.5);
+    --content-background-color: rgba(0, 0, 0, .2);
+    --hr-color: rgba(0, 0, 0, .3);
+    --nav-font-color: rgb(195, 195, 195);
+    --nav-font-hover-color: rgb(255, 255, 255);
+    --listen-link-color: rgb(103, 225, 255);
 }
 
 body {
-    background-image: linear-gradient(rgb(172, 0, 106), rgb(0, 162, 255));
+    background-image: var(--background-color);
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--default-text-color);
 }
 
+ul {
+    list-style: none;
+}
+
 header {
     height: 120px;
     width: 100%;
-    background-color: rgba(41, 41, 41, 0.5);
+    background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -31,11 +42,11 @@ header {
 .links {
     position: absolute;
     top: 50px;
-    right: var(--listSpacing);
+    right: var(--list-spacing);
 }
 
 .links a {
-    color: rgb(195, 195, 195);
+    color: var(--nav-font-color);
     font-weight: bold;
     font-size: 1rem;
     letter-spacing: .2rem;
@@ -45,12 +56,16 @@ header {
 }
 
 .links a:hover {
-    color: rgb(255, 255, 255);
+    color: var(--nav-font-hover-color);
 }
 
 .links a:active {
     position: relative;
     top: 2px;
+}
+
+table a {
+    color: var(--listen-link-color);
 }
 
 .block {
@@ -61,7 +76,7 @@ header {
 .links li {
     float: left;
     text-align: right;
-    margin-left: var(--listSpacing);
+    margin-left: var(--list-spacing);
 }
 
 .text-logo {
@@ -72,7 +87,7 @@ header {
     font-size: 1.3rem;
     letter-spacing: .5rem;
     line-height: 1.3rem;
- }
+}
 
 .logo {
     position: absolute;
@@ -90,7 +105,7 @@ header {
 main {
     max-width: 90rem;
     margin: auto;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: var(--content-background-color);
     padding: 0 4.5rem 0 4.5rem;
     text-align: justify;
 }
@@ -100,6 +115,25 @@ p {
     line-height: 1.7rem;
     letter-spacing: .1rem;
     font-size: 1.2rem;
+}
+
+.double-vid {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr td {
+    border: 1px solid var(--table-border-color);
+    padding: 10px;
+}
+
+table th {
+    border: 1px solid var(--table-border-color);
+    padding: 10px;
 }
 
 section {
@@ -118,19 +152,19 @@ section {
 }
 
 .right-element {
-    float:right;
+    float: right;
     margin-left: 1.5rem;
 }
 
 .grid1 {
     display: grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: .5rem;
 }
 
 .grid2 {
     display: grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -138,6 +172,31 @@ section {
     width: 425px;
     height: 400px;
     object-fit: cover;
+}
+
+.grid3 {
+    position: relative;
+    display: grid;
+    left: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+}
+
+.grid3 a {
+    color: var(--listen-link-color);
+}
+
+.grid3 a:hover {
+    color: white;
+}
+
+.grid3 li {
+    margin-bottom: .5rem;
+}
+
+#reference-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 iframe {
@@ -149,7 +208,7 @@ iframe {
 }
 
 hr {
-    border: 1px solid rgba(0, 0, 0, .3);
+    border: 1px solid var(--hr-color);
     margin-top: 7rem;
     margin-bottom: 4rem;
 }
@@ -170,15 +229,12 @@ h2 {
     margin-top: 1rem;
     margin-bottom: 4rem;
     letter-spacing: 1.5rem;
-    color: silver;
 }
 
 footer {
     position: relative;
     width: 100%;
     height: 80px;
-    color: silver;
-    letter-spacing: .5rem;
     background-color: rgba(41, 41, 41, 0.5);
     backdrop-filter: blur(10px);
 }
